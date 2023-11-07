@@ -1,0 +1,13 @@
+
+--- authentication
+products
+users
+orders
+reviews
+cart
+
+
+Doesn't require authentication
+login
+signup
+

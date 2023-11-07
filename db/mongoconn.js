@@ -1,6 +1,7 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const logger = require('../utils/logger');
 
-const { database, host, port} = require('../config').getMongodbConfig()
+const { database, host, port } = require('../config').getMongodbConfig();
 
 const connectionString = `mongodb://${host}:${port}`;
 
@@ -19,7 +20,7 @@ async function connectToDatabase() {
     const dbConn = client.db(database);
     return dbConn;
   } catch (err) {
-    console.error('Failed to connect to the database:', err);
+    logger.error('Failed to connect to the database:', err);
     throw err; // Rethrow the error for handling in your application
   }
 }

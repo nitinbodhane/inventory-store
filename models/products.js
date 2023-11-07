@@ -1,17 +1,18 @@
-const { connectToDatabase } = require('../db/mongoconn')
+const { connectToDatabase } = require('../db/mongoconn');
 
 function findProductById() {
   return {};
 }
 
-async function findAllProducts (options) {
+async function findAllProducts() {
   const db = await connectToDatabase();
 
   const collection = db.collection('products');
 
-  return await collection.find().toArray();
+  return collection.find().toArray();
 }
 
 module.exports = {
-  findAllProducts
-}
+  findAllProducts,
+  findProductById,
+};
